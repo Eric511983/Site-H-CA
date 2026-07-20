@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H-CA — Habets Conseil et Audit</title>
+<meta name="description" content="SARL H-CA — Commissariat aux comptes, conseil financier et audit à Bezannes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A41;
+    --navy-deep: #101C2E;
+    --ivory: #F7F4EC;
+    --ledger-green: #3B6E5D;
+    --ledger-green-bright: #4E8C77;
+    --text-muted: #5C6B7A;
+    --rule: rgba(27,42,65,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--navy);
+    background: var(--ivory);
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  a { color: inherit; }
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-img {
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+  nav a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--navy);
+    margin-left: 28px;
+  }
+  nav a:hover { color: var(--ledger-green); }
+
+  .hero {
+    position: relative;
+    padding: 90px 0 70px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 38px,
+      var(--rule) 38px,
+      var(--rule) 39px
+    );
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ledger-green);
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    max-width: 14ch;
+    margin-bottom: 22px;
+  }
+  .hero p {
+    max-width: 52ch;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+  section + section {
+    border-top: 1px solid var(--rule);
+  }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ledger-green);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 36px;
+    max-width: 30ch;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+  }
+  .service {
+    border-top: 2px solid var(--navy);
+    padding-top: 16px;
+  }
+  .service h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  .service p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .about p {
+    max-width: 62ch;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .about strong { color: var(--navy); }
+
+  .contact {
+    background: var(--navy);
+    color: var(--ivory);
+  }
+  .contact .section-label { color: var(--ledger-green-bright); }
+  .contact .section-title { color: var(--ivory); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 640px;
+  }
+  .contact-item .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(247,244,236,0.55);
+    margin-bottom: 6px;
+  }
+  .contact-item .value {
+    font-size: 1.02rem;
+  }
+  .contact-item a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(247,244,236,0.35);
+  }
+  .contact-item a:hover { border-color: var(--ledger-green-bright); }
+
+  footer {
+    padding: 28px 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <img src="logo.jpg" alt="H-CA — Habets Conseil et Audit" class="logo-img">
+      <nav>
+        <a href="#services">Prestations</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">SARL H-CA — Bezannes</span>
+      <h1>Habets Conseil et Audit</h1>
+      <p>Expertise comptable, commissariat aux comptes et conseil financier indépendant.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-label">Prestations</div>
+      <h2 class="section-title">Trois domaines d'intervention</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Expertise comptable</h3>
+          <p>Tenue, révision et établissement des comptes annuels, dans le respect des obligations légales et fiscales.</p>
+        </div>
+        <div class="service">
+          <h3>Commissariat aux comptes</h3>
+          <p>Certification des comptes annuels, dans le respect des normes d'exercice professionnel et en toute indépendance.</p>
+        </div>
+        <div class="service">
+          <h3>Conseil financier &amp; audit</h3>
+          <p>Analyse budgétaire, production de documents comptables et accompagnement dans les décisions financières.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="section-label">À propos</div>
+      <h2 class="section-title">Un accompagnement sur mesure</h2>
+      <p>SARL H-CA (Habets Conseil et Audit) est un cabinet d'expertise financière et d'audit basé à Bezannes. Le cabinet intervient comme <strong>expert-comptable</strong> et <strong>commissaire aux comptes</strong>, et accompagne ses clients dans la production de leurs documents comptables et financiers.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Échangeons sur votre besoin</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="label">E-mail</div>
+          <div class="value"><a href="mailto:eric.habets@cabinethca.fr">eric.habets@cabinethca.fr</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Adresse</div>
+          <div class="value">7 rue Pierre Salmon<br>51430 Bezannes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>SARL H-CA — Habets Conseil et Audit</span>
+      <span class="mono">SIRET : 882 764 418 00027</span>
+    </div>
+  </footer>
+
+</body>
+</html>
